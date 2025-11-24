@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .form-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .form-row label {
+            width: 120px;
+            margin-right: 10px;
+        }
+
+        .form-row input,
+        .form-row select {
+            flex: 1;
+            padding: 6px 8px;
+        }
+
+        .age,
+        .height,
+        .weight {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        .result {
+            font-size: 2rem;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .bmi-legend {
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: left;
+        }
+
+        /* Calculate BMI button */
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px 0;
+            margin-top: 10px;
+            background: linear-gradient(rgb(91, 106, 221), rgb(93, 222, 227));
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.2s ease;
+        }
+
+        input[type="submit"]:hover {
+            background: linear-gradient(135deg, #66bb6a, #388e3c);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="submit"]:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align:center;">BMI Calculator</h1>
+
+    <form method="post" action="/">
+        <div class="form-row">
+            <label for="Weight" class="weight">Weight:</label>
+            <input type="number" id="Weight" name="Weight" step="0.1" required>
+            <select id="unitWeight" name="unitWeight">
+                <option value="Kilogram">Kilogram</option>
+                <option value="Pounds">Pounds</option>
+            </select>
+        </div>
+
+        <div class="form-row">
+            <label for="Height" class="height">Height:</label>
+            <input type="number" id="Height" name="Height" step="0.1" required>
+            <select id="unitHeight" name="unitHeight">
+                <option value="Centimetres">Centimetres</option>
+                <option value="Inches">Inches</option>
+            </select>
+        </div>
+
+        <div class="form-row">
+            <label for="age" class="age">Age (years):</label>
+            <input type="number" id="age" name="age" required>
+        </div>
+
+        <input type="submit" value="Calculate BMI">
+    </form>
+
+    <div id="result" class="result">
+        {% if result %}
+        <p>{{ result }}</p>
+        {% endif %}
+    </div>
+
+
+
+    <section class="bmi-legend">
+        <h2>BMI Categories</h2>
+        <ul>
+            <li><strong>Underweight:</strong> BMI less than 18.5</li>
+            <li><strong>Healthy weight:</strong> BMI 18.5 to 24.9</li>
+            <li><strong>Overweight:</strong> BMI 25 to 29.9</li>
+            <li><strong>Obese:</strong> BMI 30 or more</li>
+        </ul>
+    </section>
+
+</body>
+
+</html>

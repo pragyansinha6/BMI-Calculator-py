@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/static/japanese_abstract_wave_pattern_design_1606.jpg');
+    text-align: center;
+    padding-top: 50px;
+}
+
+form {
+    display: inline-block;
+    background: linear-gradient(rgb(124, 214, 228), rgb(999,999,999));
+    padding: 10px 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+    text-align: left;
+    margin-right: 1px;
+}
+
+input, select {
+    padding: 5px;
+    margin: 5px 10px;
+}
+
+age{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: left;
+}
+
+.result {
+            font-size: 2rem;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;      
+            color: rgb(0, 0, 0);
+            text-align: center;
+            margin-top: 20px;
+        }
+
+h1{
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+h2{
+    text-align: center;
+}
+
+.bmi-legend {
+    display: inline-block;
+    background-color: beige;
+    padding: 1px 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}

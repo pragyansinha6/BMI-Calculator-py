@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "bmi_app.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "bmi_app.py" }
+  ]
+}
